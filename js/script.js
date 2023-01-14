@@ -110,8 +110,6 @@ function buildAndShowHomeHTML (categories) {
     false); 
 }
 
-
-
 //I think step 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
