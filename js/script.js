@@ -73,14 +73,54 @@ $(function () {
   document.addEventListener("DOMContentLoaded", function (event) {
     // On first load, show home view
     showLoading("#main-content");
-    $ajaxUtils.sendGetRequest(
-      homeHtml,
-      function (responseText) {
-        document.querySelector("#main-content").innerHTML = responseText;
-      },
-      false
-    );
-  });
+    
+
+  //   $ajaxUtils.sendGetRequest(
+  //     homeHtml,
+  //     function (responseText) {
+  //       document.querySelector("#main-content").innerHTML = responseText;
+  //     },
+  //     false
+  //   );
+  // });
+
+  $ajaxUtils.sendGetRequest(
+  
+  allCategoriesUrl,
+  function(buildAndShowCategoriesHTML) { 
+  document.querySelector("#main-content").innerHTML = responseText;
+                                                                                                                 },  
+                                                         
+// ***** <---- TODO: STEP 1: Substitute [...] ******
+  true); // Explicitely setting the flag to get JSON from server processed into an object literal
+});
+
+  // Builds HTML for the home page based on categories array
+// returned from the server.
+function buildAndShowHomeHTML (categories) {
+
+  // Load home snippet page
+  $ajaxUtils.sendGetRequest(
+    homeHtmlUrl,
+    function (homeHtml) {
+       var chosenCategoryShortName = chooseRandomCategory (categories).short_name;
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", "'" + chosenCategoryShortName + "'");
+      insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+    },
+    false); 
+}
+
+
+
+//I think step 
+// Given array of category objects, returns a random category object.
+function chooseRandomCategory (categories) {
+  // Choose a random index into the array (from 0 inclusively until array length (exclusively))
+  var randomArrayIndex = Math.floor(Math.random() * categories.length);
+
+  // return category object with that randomArrayIndex
+  return categories[randomArrayIndex];
+}
 
   // Load the menu categories view
   dc.loadMenuCategories = function () {
@@ -102,6 +142,7 @@ $(function () {
   // from the server
   function buildAndShowCategoriesHTML(categories) {
     // Load title snippet of categories page
+    //var chosenCategoryShortName = chooseRandomCategory(categories);
     $ajaxUtils.sendGetRequest(
       categoriesTitleHtml,
       function (categoriesTitleHtml) {
