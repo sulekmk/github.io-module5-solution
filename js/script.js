@@ -87,8 +87,8 @@ $(function () {
   $ajaxUtils.sendGetRequest(
   
   allCategoriesUrl,
-  function(buildAndShowCategoriesHTML) { 
-  document.querySelector("#main-content").innerHTML = responseText;
+  buildAndShowCategoriesHTML, 
+  //document.querySelector("#main-content").innerHTML = responseText;
                                                                                                                  },  
                                                          
 // ***** <---- TODO: STEP 1: Substitute [...] ******
