@@ -135,7 +135,7 @@ function chooseRandomCategory (categories) {
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       menuItemsUrl + categoryShort + ".json",
-      buildAndShowHomeHTML
+      buildAndShowMenuItemsHTML
     );
   };
 
@@ -228,6 +228,8 @@ function chooseRandomCategory (categories) {
     menuItemsTitleHtml,
     menuItemHtml
   ) {
+        console.log("-----category name----"+categoryMenuItems.category.name);
+
     menuItemsTitleHtml = insertProperty(
       menuItemsTitleHtml,
       "name",
@@ -245,6 +247,7 @@ function chooseRandomCategory (categories) {
     // Loop over menu items
     var menuItems = categoryMenuItems.menu_items;
     var catShortName = categoryMenuItems.category.short_name;
+    console.log("-----short name----"+catShortName);
     for (var i = 0; i < menuItems.length; i++) {
       // Insert menu item values
       var html = menuItemHtml;
