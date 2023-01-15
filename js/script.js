@@ -135,7 +135,7 @@ function chooseRandomCategory (categories) {
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       menuItemsUrl + categoryShort + ".json",
-      buildAndShowMenuItemsHTML
+      buildAndShowHomeHTML
     );
   };
 
