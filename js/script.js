@@ -137,11 +137,11 @@ function chooseRandomCategory (categories) {
   // 'categoryShort' is a short_name for a category
   dc.loadMenuItems = function (categoryShort) {
     showLoading("#main-content");
-    console.log("allCategoriesUrl...."+allCategoriesUrl);
+    var categoryShort+="SR";
+    console.log("menuitemsURL...."+menuItemsUrl + categoryShort + ".json");
     $ajaxUtils.sendGetRequest(
-     // menuItemsUrl + categoryShort + ".json",
-      //buildAndShowMenuItemsHTML
-      allCategoriesUrl, buildAndShowCategoriesHTML
+      menuItemsUrl + categoryShort + ".json",
+      buildAndShowMenuItemsHTML
     );
   };
 
