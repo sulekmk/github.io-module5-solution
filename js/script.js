@@ -210,7 +210,8 @@ function chooseRandomCategory (categories) {
           function (menuItemHtml) {
             // Switch CSS class active to menu button
             switchMenuToActive();
-
+             console.log("categoryMenuItems"+categoryMenuItems.length+"category name:::::"+categoryMenuItems.category.name +" short_name"
+              + categoryMenuItems.category.short_name);
             var menuItemsViewHtml = buildMenuItemsViewHtml(
               categoryMenuItems,
               menuItemsTitleHtml,
