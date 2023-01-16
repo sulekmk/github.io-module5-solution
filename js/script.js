@@ -233,7 +233,7 @@ function chooseRandomCategory (categories) {
     menuItemsTitleHtml,
     menuItemHtml
   ) {
-      console.log("-----category menu items----"+categoryMenuItems.short_name);
+      console.log("-----category menu items----"+categoryMenuItems);
 
     if(categoryMenuItems.short_name != null){
   console.log("-----category name----"+categoryMenuItems.short_name);
