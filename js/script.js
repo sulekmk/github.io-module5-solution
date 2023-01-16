@@ -232,13 +232,24 @@ function chooseRandomCategory (categories) {
     menuItemsTitleHtml,
     menuItemHtml
   ) {
-        console.log("-----category name----"+categoryMenuItems.category.name);
-
-    menuItemsTitleHtml = insertProperty(
+    if(categoryMenuItems.category.name != null){
+  console.log("-----category name----"+categoryMenuItems.category.name);
+     menuItemsTitleHtml = insertProperty(
       menuItemsTitleHtml,
       "name",
       categoryMenuItems.category.name
     );
+    
+    }else{
+       console.log("-----category short name----"+categoryMenuItems.category.short_name);
+ menuItemsTitleHtml = insertProperty(
+      menuItemsTitleHtml,
+      "name",
+      categoryMenuItems.category.short_name
+    );
+    
+    }
+      
     menuItemsTitleHtml = insertProperty(
       menuItemsTitleHtml,
       "special_instructions",
