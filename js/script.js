@@ -143,6 +143,7 @@ function chooseRandomCategory (categories) {
       menuItemsUrl + categoryShort + ".json",
       buildAndShowMenuItemsHTML
     );
+    
   };
 
   // Builds HTML for the categories page based on the data
