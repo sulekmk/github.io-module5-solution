@@ -138,12 +138,12 @@ function chooseRandomCategory (categories) {
   dc.loadMenuItems = function (categoryShort) {
     showLoading("#main-content");
     var categoryShort+="SR";
-    console.log("menuitemsURL...."+menuItemsUrl + categoryShort + ".json");
+    console.log("menuitemsURL..updated.."+menuItemsUrl + categoryShort + ".json");
     $ajaxUtils.sendGetRequest(
       menuItemsUrl + categoryShort + ".json",
       buildAndShowMenuItemsHTML
     );
-    
+
   };
 
   // Builds HTML for the categories page based on the data
